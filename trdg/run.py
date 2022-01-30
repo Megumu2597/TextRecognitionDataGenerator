@@ -366,7 +366,7 @@ def main():
         fonts = [
             os.path.join(args.font_dir, p)
             for p in os.listdir(args.font_dir)
-            if os.path.splitext(p)[1] == ".ttf"
+            if os.path.splitext(p)[1] == ".ttc"#ttfだった
         ]
     elif args.font:
         if os.path.isfile(args.font):
@@ -375,6 +375,7 @@ def main():
             sys.exit("Cannot open font")
     else:
         fonts = load_fonts(args.language)
+    print("fonts",fonts)
 
     # Creating synthetic sentences (or word)
     strings = []
